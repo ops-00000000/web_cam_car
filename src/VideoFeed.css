@@ -1,0 +1,64 @@
+.video-feed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.camera-grid {
+    position: relative;
+    width: 800px; /* Увеличиваем ширину контейнера */
+    height: 800px; /* Увеличиваем высоту контейнера */
+    margin-left: auto;
+    margin-right: 25px; /* Добавляем отступ справа */
+}
+
+.camera {
+    background-color: #333;
+    color: white;
+    width: 250px; /* Ширина камер остается прежней */
+    height: 330px; /* Увеличиваем высоту камер */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+#video-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#video-2 {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#video-3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#video-4 {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Стилизация активной камеры */
+.active-camera {
+    background-color: #333;
+    color: white;
+    width: 800px; /* Ширина активной камеры равна ширине camera-grid */
+    height: 800px; /* Высота активной камеры равна высоте camera-grid */
+    position: absolute; /* Изменяем на absolute */
+    top: 0; /* Располагаем в верхней части camera-grid */
+    left: 0; /* Располагаем в левой части camera-grid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    transform: none; /* Убираем предыдущее преобразование */
+}
