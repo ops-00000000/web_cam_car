@@ -5,7 +5,7 @@ export function useWebSocketClient() {
     const ws = useRef(null);
 
     useEffect(() => {
-        ws.current = new WebSocket('ws://172.25.0.3:9000');
+        ws.current = new WebSocket('ws://127.0.0.1:9090');
 
         ws.current.onopen = () => {
             console.log('Connected to WebSocket');
