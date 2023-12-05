@@ -1,45 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function useWebSocketClient() {
     const [messages, setMessages] = useState([]);
+    const ws = useRef(null);
 
     useEffect(() => {
-        const ws = new WebSocket('ws://127.0.0.1:9090');
+        ws.current = new WebSocket('ws://172.25.0.3:9000');
 
-        ws.onopen = () => {
+        ws.current.onopen = () => {
             console.log('Connected to WebSocket');
         };
 
-        ws.onmessage = (event) => {
+        ws.current.onmessage = (event) => {
             console.log('Received:', event.data);
             setMessages(prevMessages => [...prevMessages, event.data]);
         };
 
-        ws.onerror = (error) => {
+        ws.current.onerror = (error) => {
             console.error('WebSocket Error:', error);
         };
 
-        ws.onclose = () => {
+        ws.current.onclose = () => {
             console.log('WebSocket Disconnected');
         };
 
         return () => {
-            ws.close();
+            ws.current.close();
         };
     }, []);
 
     const sendMessage = (message) => {
-        const ws = new WebSocket('ws://127.0.0.1:9090');
-        ws.onopen = () => {
-            ws.send(message);
-            ws.close();
-        };
+        ws.current.send(message);
     };
 
     return { messages, sendMessage };
 }
-
-
-
-
-
