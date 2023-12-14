@@ -8,17 +8,17 @@
 
 .camera-grid {
     position: relative;
-    width: 800px; /* Увеличиваем ширину контейнера */
-    height: 800px; /* Увеличиваем высоту контейнера */
+    width: 800px;
+    height: 800px;
     margin-left: auto;
-    margin-right: 25px; /* Добавляем отступ справа */
+    margin-right: 25px;
 }
 
 .camera {
     background-color: #333;
     color: white;
-    width: 250px; /* Ширина камер остается прежней */
-    height: 330px; /* Увеличиваем высоту камер */
+    width: 250px;
+    height: 330px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,19 +46,19 @@
     top: 50%;
     transform: translateY(-50%);
 }
-/* Стилизация активной камеры */
+
 .active-camera {
     background-color: #333;
     color: white;
-    width: 800px; /* Ширина активной камеры равна ширине camera-grid */
-    height: 800px; /* Высота активной камеры равна высоте camera-grid */
-    position: absolute; /* Изменяем на absolute */
-    top: 0; /* Располагаем в верхней части camera-grid */
-    left: 0; /* Располагаем в левой части camera-grid */
+    width: 800px;
+    height: 800px;
+    position: relative;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 2;
-    transform: none; /* Убираем предыдущее преобразование */
+    transform: none;
 }

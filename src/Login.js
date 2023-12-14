@@ -13,7 +13,7 @@ function Login({ onLogin }) {
 
     return (
         <div className="login-container">
-            <div className="login-title">Login</div> {/* Добавленная надпись */}
+            <div className="login-title">Login</div>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

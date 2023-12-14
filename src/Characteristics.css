@@ -1,0 +1,21 @@
+.characteristics {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 20px;
+    overflow-y: auto;
+    height: 400px;
+}
+
+.characteristic {
+    margin-bottom: 10px;
+}
+
+.characteristic-label {
+    font-weight: bold;
+}
+
+.characteristic-value {
+    margin-left: 10px;
+}
